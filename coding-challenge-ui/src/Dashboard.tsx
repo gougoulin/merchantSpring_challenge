@@ -138,7 +138,6 @@ const Dashboard = () => {
 
   const maxPage = Math.round(overdueOrders.length / limit);
   const handleNextPage = () => {
-    console.log("click next");
     let newPage = currentPage + 1;
     if (newPage > maxPage) {
       console.log("Max page reached");
@@ -148,7 +147,6 @@ const Dashboard = () => {
     }
   };
   const handlePrevPage = () => {
-    console.log("click prev");
     let newPage = currentPage - 1;
     if (currentPage === 1) {
       console.log("First page reached.");
@@ -188,7 +186,7 @@ const Dashboard = () => {
         setData(originalData.slice(0, limit));
         break;
       case SortOrder.ASC:
-        let ascData = overdueOrders.sort(
+        let ascData = [...overdueOrders].sort(
           (left: OverdueOrder, right: OverdueOrder) => {
             return left.overdueDays - right.overdueDays;
           }
@@ -197,8 +195,9 @@ const Dashboard = () => {
         setCurrentPage(1);
         setData(ascData.slice(0, limit));
         break;
+        z;
       case SortOrder.DESC:
-        let descData = overdueOrders.sort(
+        let descData = [...overdueOrders].sort(
           (left: OverdueOrder, right: OverdueOrder) => {
             return right.overdueDays - left.overdueDays;
           }
