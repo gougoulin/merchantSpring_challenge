@@ -195,7 +195,6 @@ const Dashboard = () => {
         setCurrentPage(1);
         setData(ascData.slice(0, limit));
         break;
-        z;
       case SortOrder.DESC:
         let descData = [...overdueOrders].sort(
           (left: OverdueOrder, right: OverdueOrder) => {
