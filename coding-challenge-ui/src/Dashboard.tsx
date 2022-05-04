@@ -100,7 +100,7 @@ const Dashboard = () => {
   const [originalData, setOriginalData] = useState([]);
   const [overdueOrders, setOverdueOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimit] = useState(5);
   const [data, setData] = useState([]);
   const [order, setOrder] = useState(0);
   const orders = [SortOrder.RANDOM, SortOrder.ASC, SortOrder.DESC];
@@ -152,7 +152,7 @@ const Dashboard = () => {
       console.log("First page reached.");
     } else {
       setCurrentPage(newPage);
-      setData(overdueOrders.slice(newPage * limit, (newPage + 1) * limit));
+      setData(overdueOrders.slice((newPage - 1) * limit, newPage * limit));
     }
   };
   const handleLastPage = () => {
