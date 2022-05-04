@@ -47,7 +47,7 @@ const DashboardWrapper = styled.div`
   padding: 0;
   background-color: white;
   color: #282828;
-  shadow: 10px 10px 5px #999;
+  box-shadow: 4px 4px 4px #aaa;
 `;
 
 const HeaderWrapper = styled.div`
